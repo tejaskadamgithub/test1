@@ -1,0 +1,549 @@
+expt 1
+
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>First Page</title>
+   <script>
+  
+   </script>
+    <style type="text/css">
+	p:hover
+        {
+         color:blue;
+	}
+  p:focus
+        {
+ 	color:green;
+	}
+
+   input:hover
+    {
+
+   background:green;
+    }
+   input:active
+     {
+     background:white;
+	}
+   form:empty
+    {
+	     background:white;
+}
+ 
+p input:valid
+   {
+  background:pink;
+   }
+p:optional
+{
+font-size:10px;
+}
+
+
+     </style>
+  
+   </script>
+  </head>
+  <body>
+  <form name="A" action="http://127.0.0.1:8080/process.jsp"> 
+  <fieldset>
+  <legend>Input Box element </legend>
+  <p>
+  <label for="txt">TextBox</label>
+  <input type="text" id="txt" placeholder="Type you name in samll" onfocus=callf1() required>
+  </p>
+  <p>
+
+  <label for="eid">Email:</label>
+  <input type="email" id="eid" >
+  </p>
+  <p>
+  <label for="">Password:</label>
+  <input type="password" placeholder="type ur password here" maxlength=8 required>
+</p>
+<p>
+<label for="n">Enter your age:</label>
+<input type="number" id="n" min=18 max=100>
+</p>
+
+<p>
+Education Completed :<input type="text" list="dl" name="edu"></p>
+<datalist id="dl">
+<option value="High School">
+<option value="UG">
+<option value="PG">
+</datalist>
+
+<p> How old are you:</p>
+<input type="radio" name=age value=24>24
+<input type="radio" name=age value=19>19-23
+<input type="radio" name=age value=24>25-34
+<input type="radio" name=age value=24>35-50
+
+<p> What type of music do you like: </p>
+<input type="checkbox"> Bhajan 
+<input type="checkbox"> Kirtan
+<input type="checkbox"> Rock star
+
+<p> Select your most liked domain
+<select name="d">
+<option>plz select any choice</option>
+<option value="hh">Internet Programming</option>
+<option value="hh">Advanc DevOps</option>
+</select>
+</p>
+<p> uploads your resume here:<input type="file"></p>
+<p>
+Your choice of color:<input type="color"></p>
+<p> Select you satisfaction level :<input type="range" min=0 max=100 step=2>
+</p>
+<p>Type your home page url :<input type="url" required> </p>
+<p>
+Enter your feedback :<textarea rows=5 cols=50> </textarea></p>
+<p>Search here :<input type="search" required> </p>
+<br/>
+<hr color="green">
+<input type="reset" name="re" value="CLEAR">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Sample" name="nb">
+<input type="submit" value="Save Now" name="su">
+
+
+
+   </fieldset>
+  </form>
+  </body>
+  </html>  
+</html>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 2 arrow funct
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arrow Function </title>
+</head>
+<body>
+
+<h1>JavaScript Functions</h1>
+<h2>The Arrow Function</h2>
+
+<p>This example shows the syntax of an Arrow Function, and how to use it.</p>
+
+<p id="demo"></p>
+
+<script>
+let hello = "";
+
+hello = () => {
+  return "Hello World!";
+}
+
+document.getElementById("demo").innerHTML = hello();
+</script>
+
+</body>
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 3 class inher
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class</h2>
+
+<p>How to use a JavaScript Class.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+myCar.name + " " + myCar.year;
+</script>
+
+</body>
+</html>
+---
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class Inheritance</h2>
+
+<p>Use the "extends" keyword to inherit all methods from another class.</p>
+<p>Use the "super" method to call the parent's constructor function.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+let myCar = new Model("Ford", "Mustang");
+document.getElementById("demo").innerHTML = myCar.show();
+</script>
+
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------------------
+expt 4 state prop
+
+ import React from 'react';
+ import ReactDOM from 'react-dom/client';
+
+ function Car(props) {
+   return <h2>I am a { props.brand }!</h2>;
+ }
+
+ function Garage() {
+   return (
+     <>
+ 	    <h1>Who lives in my garage?</h1>
+ 	    <Car brand="Ford" />
+     </>
+   );
+ }
+ export default Garage;
+---
+
+ import { useState } from "react";
+ import ReactDOM from "react-dom/client";
+
+ function FavoriteColor() {
+   const [color, setColor] = useState("red");
+
+   return (
+     <>
+       <h1>My favorite color is {color}!</h1>
+       <button
+         type="button"
+         onClick={() => setColor("blue")}
+       >Blue</button>
+     </>
+   )
+ }
+ export default FavoriteColor
+
+---
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+//import './index.css';
+//import App from './App';
+import Hook from './hook';
+//import Server from './Server';
+//import Promise from './Promise'
+import reportWebVitals from './reportWebVitals';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+<React.StrictMode>
+    <Hook />
+
+</React.StrictMode>
+);
+
+reportWebVitals();
+
+------------------------------------------------------------------------------------------------------------------------------------
+expt 5 react router
+
+import './App.css';
+
+function App() {
+  return (
+    <div>
+      <h1>This is react-dom</h1>
+      
+    </div>
+  );
+}
+
+export default App;
+---
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+//import './index.css';
+import App from './App';
+//import Hook from './Hook';
+//import Server from './Server';
+//import Promise from './Promise'
+import reportWebVitals from './reportWebVitals';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+<React.StrictMode>
+    <App />
+
+</React.StrictMode>
+);
+
+reportWebVitals();
+--------------------------------------------------------------------------------------------------------------------------------------------
+expt 6 react hooks
+
+usestate, useeffect
+//import logo from './logo.svg';
+//import './App.css';
+import React, {useState,useEffect,useRef} from 'react';
+
+function App() {
+const [count,setCount]=useState(0)
+
+const prevCount=useRef(0)
+
+useEffect(() => {
+prevCount.current=count
+console.log("It will be called every time ")
+
+})
+
+return (
+<div>
+<div>
+Previous Value :{prevCount.current } , Count :{count}
+</div>
+
+<button onClick={() => setCount((count) => count +1 )}> Add + </button>
+</div>
+
+);
+
+
+}
+
+export default App;
+---
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+//import './index.css';
+//import App from './App';
+import Hook from './hook';
+//import Server from './Server';
+//import Promise from './Promise'
+import reportWebVitals from './reportWebVitals';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+<React.StrictMode>
+    <Hook />
+
+</React.StrictMode>
+);
+
+reportWebVitals();
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+expt 7 envt setup
+
+type following commands into fedora terminal.
+
+Method 1 : Install Node.js from Default Package Repository
+
+sudo dnf install nodejs
+
+node -v
+
+Method 2 – Install Node.js from Official Repository
+
+For Latest Release:-
+sudo dnf install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_18.x | sudo -E bash -
+
+For Stable Release:-
+sudo dnf install -y gcc-c++ make
+
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash –
+
+sudo dnf install nodejs
+
+node --version
+
+npm --version
+
+
+Method 3 – Install Node.js on Fedora via NVM
+
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+source ~/.bashrc
+
+nvm install v16.14
+
+For Webserver creation , Create a file demo_server.js vim http_demo_server.js
+
+now add following code into it.
+
+var http = require(&#39;http&#39;);
+http.createServer(function (req, res) {
+
+res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;});
+res.end(&#39;Welcome Node.js&#39;);
+}).listen(3001, &quot;127.0.0.1&quot;);
+console.log(&#39;Server running at http://127.0.0.1:3001/&#39;);
+
+
+now in terminal, type
+node --inspect http_demo_server.js
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 8 simple web server
+
+const http = require('http')
+
+const server=http.createServer((req,res) => {
+
+res.write('I am from server-lenovo,hello How r u?')
+res.end()
+});
+
+
+server.listen(4000,() => {
+console.log("Server has started on 4000 port no")
+
+});
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 9- 
+promise async and await
+
+ const doSomethingAsync = () => 
+ {
+ return new Promise((resolve,reject) => 
+  {
+ setTimeout(() => resolve('I did something'), 3000)
+  }
+  )
+ }
+ const doSomething = async () => 
+  {
+  let ans=await doSomethingAsync()
+  console.log(ans)
+ console.log(await doSomethingAsync())
+ }
+
+
+ console.log('Before')
+ doSomething()
+ console.log('After')
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 10 express
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+expt 11 --list frame
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>A Description List</h2>
+
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Example of HTML Frames Using col Attribute</title>
+    </head>
+          
+    <frameset cols = "30%, 40%, 30%">
+        <frame name = "top" src = 
+        "C:/Users/dharam/Desktop/attr1.png" />
+        <frame name = "main" src = 
+        "C:/Users/dharam/Desktop/gradient3.png" />
+        <frame name = "bottom" src = 
+        "C:/Users/dharam/Desktop/col_last.png" />        
+        <noframes>
+            <body>The browser you are working does 
+                         not support frames.</body>
+        </noframes>
+    </frameset>
+</html>   
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+expt 12 breadcrumb
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+ 
+<h2>Breadcrumb Pagination</h2>
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Pictures</a></li>
+  <li><a href="#">Summer 15</a></li>
+  <li>Italy</li>
+</ul>
+ 
+</body>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
